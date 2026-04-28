@@ -15,17 +15,22 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         bodyClassName,
         kcContext,
         i18n,
-        doUseDefaultCss,
         classes
     } = props;
+
+    let { doUseDefaultCss } = props;
+
+    const strategy = getStrategy(kcContext.client.clientId);
+
+    if (strategy.useDefaultCss) {
+        doUseDefaultCss = false;
+    }
 
     const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
 
     const { msg, msgStr, currentLanguage, enabledLanguages } = i18n;
 
     const { realm } = kcContext;
-
-    const strategy = getStrategy(kcContext.client.clientId);
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName || realm.name);

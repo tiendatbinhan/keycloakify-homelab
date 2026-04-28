@@ -14,10 +14,6 @@ export type TemplateRenderContext = TemplateProps<KcContext, I18n> & {
 };
 
 export interface ThemeStrategy {
-  logo: string;
-  primaryColor: string;
-  appName: string;
-  backgroundClass: string;
   render: (ctx: TemplateRenderContext) => React.ReactNode;
-  useDefault?: boolean;
+  useDefaultCss?: boolean;
 }

@@ -158,10 +158,6 @@ const renderFunction = (ctx: TemplateRenderContext) => {
 }
 
 export const defaultStrategy: ThemeStrategy = {
-    logo: "/resources/img/keycloak-logo.png",
-    primaryColor: "#4d9ad6",
-    appName: "",
-    backgroundClass: "bg-[#4d9ad6]",
-    useDefault: true,
+    useDefaultCss: true,
     render: renderFunction
 };
