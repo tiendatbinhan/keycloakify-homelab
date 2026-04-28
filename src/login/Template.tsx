@@ -23,7 +23,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     const strategy = getStrategy(kcContext.client.clientId);
 
     if (strategy.useDefaultCss) {
-        doUseDefaultCss = false;
+        doUseDefaultCss = true;
     }
 
     const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
