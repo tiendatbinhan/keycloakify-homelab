@@ -22,7 +22,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     let { doUseDefaultCss } = props;
 
-    const strategy = getStrategy(kcContext.client.clientId);
+    const strategy = getStrategy(kcContext.client.attributes.themeVariant);
     useStrategyStyles(strategy);
 
     if (!(strategy === defaultStrategy)) {

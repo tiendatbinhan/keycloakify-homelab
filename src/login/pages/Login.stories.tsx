@@ -377,3 +377,48 @@ export const WithAuthPassKey: Story = {
         />
     )
 };
+
+export const Test: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                client: {
+                    attributes: {
+                        themeVariant: "test",
+                    },
+                },
+            }}
+        />
+    ),
+}
+
+export const TestWithInvalidCredetials: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                client: {
+                    attributes: {
+                        themeVariant: "test",
+                    },
+                },
+                login: {
+                    username: "johndoe"
+                },
+                messagesPerField: {
+                    // NOTE: The other functions of messagesPerField are derived from get() and
+                    // existsError() so they are the only ones that need to mock.
+                    existsError: (fieldName: string, ...otherFieldNames: string[]) => {
+                        const fieldNames = [fieldName, ...otherFieldNames];
+                        return fieldNames.includes("username") || fieldNames.includes("password");
+                    },
+                    get: (fieldName: string) => {
+                        if (fieldName === "username" || fieldName === "password") {
+                            return "Invalid username or password.";
+                        }
+                        return "";
+                    }
+                }
+            }}
+        />
+    ),
+}
