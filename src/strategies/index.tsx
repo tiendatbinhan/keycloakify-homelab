@@ -1,4 +1,4 @@
-import { defaultStrategy } from "./themes/default.strategy";
+import defaultStrategy from "./themes/default";
 import type { ThemeStrategy } from "./types";
 
 const strategyMap: Record<string, ThemeStrategy> = {

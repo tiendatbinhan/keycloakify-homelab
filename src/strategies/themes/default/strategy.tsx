@@ -1,5 +1,5 @@
-import { ThemeStrategy } from "../types";
-import { TemplateRenderContext } from "../types";
+import { ThemeStrategy } from "../../types";
+import { TemplateRenderContext } from "../../types";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 
 const renderFunction = (ctx: TemplateRenderContext) => {
@@ -158,6 +158,5 @@ const renderFunction = (ctx: TemplateRenderContext) => {
 }
 
 export const defaultStrategy: ThemeStrategy = {
-    useDefaultCss: true,
     render: renderFunction
 };

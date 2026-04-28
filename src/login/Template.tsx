@@ -8,6 +8,8 @@ import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 import { getStrategy } from "../strategies";
 import { TemplateRenderContext } from "../strategies/types";
+import defaultStrategy from "../strategies/themes/default";
+import { useStrategyStyles } from "../strategies/hooks/useStrategyStyles";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -21,8 +23,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     let { doUseDefaultCss } = props;
 
     const strategy = getStrategy(kcContext.client.clientId);
+    useStrategyStyles(strategy);
 
-    if (strategy.useDefaultCss) {
+    if (strategy === defaultStrategy) {
         doUseDefaultCss = true;
     }
 
