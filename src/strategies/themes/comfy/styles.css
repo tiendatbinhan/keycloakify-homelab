@@ -1,0 +1,103 @@
+@import "material-icons/iconfont/material-icons.css";
+@import "tailwindcss";
+
+.comfyStrategy {
+  .mainBackground {
+    @apply bg-[#202020] flex items-center justify-center min-h-screen flex-col
+  }
+
+  .kcLabelClass {
+    @apply text-base text-[#f2ff59];
+  }
+
+  .kcInputClass {
+    @apply border-2 rounded-lg border-[#202020] bg-[#2a2a2a] mt-2 mb-2 p-2 flex-1 text-white;
+  }
+
+  .kcFormSettingClass {
+    @apply text-base text-[#f2ff59];
+  }
+
+  .kcFormOptionsWrapperClass {
+    @apply self-end underline;
+  }
+
+  .kcInputGroup {
+    @apply flex flex-row;
+  }
+
+  .kcFormGroupClass {
+    @apply flex flex-col;
+  }
+
+  .kcFormPasswordVisibilityButtonClass {
+    @apply justify-end;
+  }
+  .kcFormPasswordVisibilityIconShow::before,
+
+  .kcFormPasswordVisibilityIconHide::before {
+    font-family: 'Material Icons';
+    @apply text-2xl text-[#f2ff59] not-italic m-4;
+  }
+
+  .kcFormPasswordVisibilityIconShow::before {
+    content: 'visibility';
+  }
+
+  .kcFormPasswordVisibilityIconHide::before {
+    content: 'visibility_off';
+  }
+
+  .kcInputErrorMessageClass {
+    @apply text-red-400 text-xs mb-4;
+  }
+
+  .kcButtonClass {
+    @apply mt-2 mb-2 text-[#202020] bg-[#f2ff59] border-2 border-[#202020] rounded-lg p-2 cursor-pointer transition-colors;
+  }
+
+  .kcButtonClass:hover {
+    @apply bg-[#202020] text-[#f2ff59] border-[#f2ff59] border-2
+  }
+
+  .messageIcon::before {
+    font-family: "Material Icons";
+    content: "notifications";
+    @apply text-2xl text-red-400 not-italic mr-2
+  }
+
+  .kcCheckInputClass {
+    @apply appearance-none w-4 h-4 border-2 border-[#f2ff59] rounded-sm 
+           bg-transparent cursor-pointer relative;
+  }
+
+  .kcCheckInputClass:checked {
+    @apply bg-[#f2ff59];
+  }
+
+  .kcCheckInputClass:checked::after {
+    content: '';
+    @apply absolute inset-0 flex items-center justify-center;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23202020' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.707 4.293a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L6 10.586l6.293-6.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  input[type="checkbox"] {
+    @apply appearance-none mr-1 w-4 h-4 border-2 border-[#f2ff59] rounded-sm bg-transparent cursor-pointer relative align-middle transition;
+  }
+
+  input[type="checkbox"]:checked {
+    @apply bg-[#f2ff59];
+  }
+
+  input[type="checkbox"]::after {
+    @apply scale-0 transition;
+  }
+
+  input[type="checkbox"]:checked::after {
+    content: 'check';
+    font-family: 'Material Icons';
+    @apply absolute inset-0 flex items-center justify-center text-[#202020] text-xs scale-100;
+  }
+}

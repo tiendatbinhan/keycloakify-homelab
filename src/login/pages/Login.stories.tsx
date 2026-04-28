@@ -384,7 +384,7 @@ export const Test: Story = {
             kcContext={{
                 client: {
                     attributes: {
-                        themeVariant: "test",
+                        themeVariant: "comfy",
                     },
                 },
             }}
@@ -392,13 +392,13 @@ export const Test: Story = {
     ),
 }
 
-export const TestWithInvalidCredetials: Story = {
+export const TestWithInvalidCredetial: Story = {
     render: () => (
         <KcPageStory
             kcContext={{
                 client: {
                     attributes: {
-                        themeVariant: "test",
+                        themeVariant: "comfy",
                     },
                 },
                 login: {
@@ -417,6 +417,24 @@ export const TestWithInvalidCredetials: Story = {
                         }
                         return "";
                     }
+                }
+            }}
+        />
+    ),
+}
+
+export const TestWithErrorMessage: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                client: {
+                    attributes: {
+                        themeVariant: "comfy",
+                    },
+                },
+                message: {
+                    summary: "The time allotted for the connection has elapsed.<br/>The login process will restart from the beginning.",
+                    type: "error"
                 }
             }}
         />

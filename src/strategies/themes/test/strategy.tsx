@@ -1,6 +1,6 @@
 import { ThemeStrategy } from "../../types";
 import { TemplateRenderContext } from "../../types";
-import "./style.css"
+import "./style.css?url"
 
 export const testStrategy: ThemeStrategy = {
     render(ctx: TemplateRenderContext) {
