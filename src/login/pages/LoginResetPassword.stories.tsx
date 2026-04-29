@@ -65,7 +65,7 @@ export const Test: Story = {
       kcContext={{
         client: {
           clientId: "comfyui"
-        },
+        }
       }}
     />
   )
