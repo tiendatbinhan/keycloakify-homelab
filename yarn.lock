@@ -1408,6 +1408,11 @@
   resolved "https://registry.npmjs.org/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
+"@fontsource/arimo@^5.2.8":
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/arimo/-/arimo-5.2.8.tgz#1e3319314c86c28307073e0d2ae3d0c96e6233da"
+  integrity sha512-EGB/l4PhYsxJbskePrgFQKM3Ob+x3Xr+VZDuSMR2XNVQYhx8t5zIfiMxCLLbgBPkY2qeXGfbyrXeAOEGl1lOSA==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.npmjs.org/@humanfs/core/-/core-0.19.1.tgz"

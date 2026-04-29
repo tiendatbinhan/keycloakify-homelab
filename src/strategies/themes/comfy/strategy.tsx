@@ -1,6 +1,7 @@
 import { ThemeStrategy, TemplateRenderContext } from "../../types";
 import ComfyuiLogo from "../../../assets/images/comfyui-text.svg?react";
 import "./styles.css";
+import "@fontsource/arimo/400.css";
 import { useGetQuote } from "../../hooks/useGetQuotes";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 
