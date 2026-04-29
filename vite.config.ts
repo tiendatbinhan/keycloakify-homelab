@@ -12,7 +12,7 @@ export default defineConfig({
       accountThemeImplementation: "none",
       keycloakVersionTargets: {
         "22-to-25": false,
-        "all-other-versions": true
+        "all-other-versions": "keycloak-theme.jar"
       }
     }),
     tailwindcss(),

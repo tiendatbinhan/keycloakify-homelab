@@ -1,0 +1,16 @@
+services:
+  keycloakify-build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    working_dir: /app
+
+    volumes:
+      - .:/app
+
+    command: >
+      bash -c "
+        yarn install &&
+        yarn build-keycloak-theme
+      "
