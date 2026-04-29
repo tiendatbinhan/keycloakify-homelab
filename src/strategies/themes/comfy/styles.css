@@ -49,7 +49,7 @@
   }
 
   .kcInputErrorMessageClass {
-    @apply text-red-400 text-xs mb-4;
+    @apply text-red-400 text-sm mb-4;
   }
 
   .kcButtonClass {

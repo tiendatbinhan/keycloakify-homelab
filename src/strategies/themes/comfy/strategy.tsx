@@ -11,7 +11,7 @@ function RenderQuote() {
     {quote && 
       <div className="flex flex-col items-center justify-center mb-6">
         <p className="text-base text-[#f2ff59] italic">"{quote.text}"</p>
-        <p className="text-xs text-white not-italic self-end">{quote.author}</p>
+        <p className="text-sm text-white not-italic self-end">{quote.author}</p>
       </div>
     }
   </>
