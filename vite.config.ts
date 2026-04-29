@@ -9,7 +9,11 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            accountThemeImplementation: "none"
+            accountThemeImplementation: "none",
+            keycloakVersionTargets: {
+                "22-to-25": false,
+                "all-other-versions": true,
+            }
         }),
         tailwindcss(),
         svgr(),
