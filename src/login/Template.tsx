@@ -49,5 +49,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
   const ctx: TemplateRenderContext = { ...props, kcClsx, clsx, msg, msgStr, currentLanguage, enabledLanguages };
 
-  return <>{strategy.render(ctx)}</>;
+  try {
+    return <>{strategy.render(ctx)}</>;
+  } catch (error) {
+    console.error("Strategy execution failed, falling back to default:\n", error);
+    return <>{defaultStrategy.render(ctx)}</>;
+  }
 }

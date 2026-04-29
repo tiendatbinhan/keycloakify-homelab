@@ -383,10 +383,8 @@ export const Test: Story = {
     <KcPageStory
       kcContext={{
         client: {
-          attributes: {
-            themeVariant: "comfy"
-          }
-        }
+          clientId: "comfyui"
+        },
       }}
     />
   )
