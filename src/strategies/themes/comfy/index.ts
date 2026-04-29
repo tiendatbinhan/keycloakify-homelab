@@ -1,3 +1,3 @@
 import { comfyStrategy } from "./strategy";
 
-export default comfyStrategy
+export default comfyStrategy;

@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState } from "react";
 import quoteList from "./quotes.json";
 
 interface Quote {
@@ -7,9 +7,7 @@ interface Quote {
 }
 
 export function useGetQuote(): Quote {
-  const [quote, _setQuote] = useState<Quote>(
-    quoteList[Math.floor(Math.random() * quoteList.length)]
-  );
+  const [quote, _setQuote] = useState<Quote>(quoteList[Math.floor(Math.random() * quoteList.length)]);
 
   return quote;
 }

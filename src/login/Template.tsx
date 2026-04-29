@@ -11,49 +11,43 @@ import { TemplateRenderContext } from "../strategies/types";
 import defaultStrategy from "../strategies/themes/default";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
-    const {
-        documentTitle,
-        bodyClassName,
-        kcContext,
-        i18n,
-        classes
-    } = props;
+  const { documentTitle, bodyClassName, kcContext, i18n, classes } = props;
 
-    let { doUseDefaultCss } = props;
+  let { doUseDefaultCss } = props;
 
-    const strategy = getStrategy(kcContext.client.attributes.themeVariant);
+  const strategy = getStrategy(kcContext.client.attributes.themeVariant);
 
-    if (!(strategy === defaultStrategy)) {
-        doUseDefaultCss = false;
-    }
+  if (!(strategy === defaultStrategy)) {
+    doUseDefaultCss = false;
+  }
 
-    const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
+  const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
 
-    const { msg, msgStr, currentLanguage, enabledLanguages } = i18n;
+  const { msg, msgStr, currentLanguage, enabledLanguages } = i18n;
 
-    const { realm } = kcContext;
+  const { realm } = kcContext;
 
-    useEffect(() => {
-        document.title = documentTitle ?? msgStr("loginTitle", realm.displayName || realm.name);
-    }, []);
+  useEffect(() => {
+    document.title = documentTitle ?? msgStr("loginTitle", realm.displayName || realm.name);
+  }, []);
 
-    useSetClassName({
-        qualifiedName: "html",
-        className: kcClsx("kcHtmlClass")
-    });
+  useSetClassName({
+    qualifiedName: "html",
+    className: kcClsx("kcHtmlClass")
+  });
 
-    useSetClassName({
-        qualifiedName: "body",
-        className: bodyClassName ?? kcClsx("kcBodyClass")
-    });
+  useSetClassName({
+    qualifiedName: "body",
+    className: bodyClassName ?? kcClsx("kcBodyClass")
+  });
 
-    const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
+  const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
 
-    if (!isReadyToRender) {
-        return null;
-    }
+  if (!isReadyToRender) {
+    return null;
+  }
 
-    const ctx: TemplateRenderContext = {...props, kcClsx, clsx, msg, msgStr, currentLanguage, enabledLanguages};
+  const ctx: TemplateRenderContext = { ...props, kcClsx, clsx, msg, msgStr, currentLanguage, enabledLanguages };
 
-    return <>{strategy.render(ctx)}</>;
+  return <>{strategy.render(ctx)}</>;
 }

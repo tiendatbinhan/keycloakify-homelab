@@ -3,7 +3,7 @@
 
 .comfyStrategy {
   .mainBackground {
-    @apply bg-[#202020] flex items-center justify-center min-h-screen flex-col
+    @apply bg-[#202020] flex items-center justify-center min-h-screen flex-col;
   }
 
   .kcLabelClass {
@@ -38,18 +38,17 @@
     @apply justify-end;
   }
   .kcFormPasswordVisibilityIconShow::before,
-
   .kcFormPasswordVisibilityIconHide::before {
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     @apply text-2xl text-[#f2ff59] not-italic m-4;
   }
 
   .kcFormPasswordVisibilityIconShow::before {
-    content: 'visibility';
+    content: "visibility";
   }
 
   .kcFormPasswordVisibilityIconHide::before {
-    content: 'visibility_off';
+    content: "visibility_off";
   }
 
   .kcInputErrorMessageClass {
@@ -61,21 +60,21 @@
   }
 
   .kcButtonClass:hover {
-    @apply bg-[#202020] text-[#f2ff59] border-[#f2ff59] border-2
+    @apply bg-[#202020] text-[#f2ff59] border-[#f2ff59] border-2;
   }
 
   .messageIcon::before {
     font-family: "Material Icons";
     content: "notifications";
-    @apply text-2xl text-red-400 not-italic mr-2
+    @apply text-2xl text-red-400 not-italic mr-2;
   }
 
   .kcInputWrapperClass {
-    @apply flex
+    @apply flex;
   }
 
   .kcFormOptionsWrapperClass {
-    @apply flex
+    @apply flex;
   }
 
   input[type="checkbox"] {
@@ -91,8 +90,8 @@
   }
 
   input[type="checkbox"]:checked::after {
-    content: 'check';
-    font-family: 'Material Icons';
+    content: "check";
+    font-family: "Material Icons";
     @apply absolute inset-0 flex items-center justify-center text-[#202020] text-xs scale-100;
   }
 }
