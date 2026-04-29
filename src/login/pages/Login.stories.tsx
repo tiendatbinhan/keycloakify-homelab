@@ -397,9 +397,7 @@ export const TestWithInvalidCredetial: Story = {
     <KcPageStory
       kcContext={{
         client: {
-          attributes: {
-            themeVariant: "comfy"
-          }
+          clientId: "comfyui"
         },
         login: {
           username: "johndoe"
@@ -428,9 +426,7 @@ export const TestWithErrorMessage: Story = {
     <KcPageStory
       kcContext={{
         client: {
-          attributes: {
-            themeVariant: "comfy"
-          }
+          clientId: "comfyui"
         },
         message: {
           summary: "The time allotted for the connection has elapsed.<br/>The login process will restart from the beginning.",

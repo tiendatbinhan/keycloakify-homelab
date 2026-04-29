@@ -5,7 +5,7 @@ import type { ThemeStrategy } from "./types";
 
 const strategyMap: Record<string, ThemeStrategy> = {
   test: testStrategy,
-  comfy: comfyStrategy
+  comfyui: comfyStrategy
 };
 
 export function getStrategy(themeVariant?: string): ThemeStrategy {
