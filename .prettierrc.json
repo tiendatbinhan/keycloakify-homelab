@@ -1,6 +1,6 @@
 {
     "printWidth": 90,
-    "tabWidth": 4,
+    "tabWidth": 2,
     "useTabs": false,
     "semi": true,
     "singleQuote": false,
@@ -15,6 +15,7 @@
                 "**/login/Template.tsx",
                 "**/account/Template.tsx",
                 "**/login/UserProfileFormFields.tsx",
+                "**/strategies/**/*.tsx",
                 "KcApp.tsx"
             ],
             "options": {
