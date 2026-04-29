@@ -14,6 +14,5 @@ export type TemplateRenderContext = TemplateProps<KcContext, I18n> & {
 };
 
 export interface ThemeStrategy {
-  render: (ctx: TemplateRenderContext) => React.ReactNode;
-  cssUrl?: string;
+  render: (ctx: TemplateRenderContext) => React.ReactNode
 }
