@@ -58,7 +58,7 @@
   }
 
   .kcButtonClass {
-    @apply mt-2 mb-2 text-[#202020] bg-[#f2ff59] border-2 border-[#202020] rounded-lg p-2 cursor-pointer transition-colors flex-1;
+    @apply mt-2 mb-2 text-[#202020] bg-[#f2ff59] border-2 border-[#202020] rounded-lg p-2 cursor-pointer transition-colors w-fit self-center;
   }
 
   .kcButtonClass:hover {
