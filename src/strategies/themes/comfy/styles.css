@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 .comfyStrategy {
-  @apply font-[Arimo,Arial,san-serif];
+  @apply font-[Arimo,Arial,san-serif] text-white;
 
   .mainBackground {
     @apply bg-[#202020] flex items-center justify-center min-h-screen flex-col;
