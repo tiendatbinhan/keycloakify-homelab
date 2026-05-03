@@ -28,7 +28,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
   const { realm } = kcContext;
 
   useEffect(() => {
-    document.title = documentTitle ?? msgStr("loginTitle", realm.displayName || realm.name);
+    document.title = strategy.documentTitle ?? documentTitle ?? msgStr("loginTitle", realm.displayName || realm.name);
   }, []);
 
   useSetClassName({

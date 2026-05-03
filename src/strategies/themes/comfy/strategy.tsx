@@ -44,5 +44,6 @@ export const comfyStrategy: ThemeStrategy = {
         </div>
       </div>
     );
-  }
+  },
+  documentTitle: "Sign in to ComfyUI"
 };
