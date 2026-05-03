@@ -86,7 +86,7 @@ export const WithAuthPassKey: Story = {
   )
 };
 
-export const Test: Story = {
+export const Comfy: Story = {
   render: () => (
     <KcPageStory
       kcContext={{

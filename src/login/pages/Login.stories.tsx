@@ -378,7 +378,7 @@ export const WithAuthPassKey: Story = {
   )
 };
 
-export const Test: Story = {
+export const Comfy: Story = {
   render: () => (
     <KcPageStory
       kcContext={{
@@ -390,7 +390,7 @@ export const Test: Story = {
   )
 };
 
-export const TestWithInvalidCredetial: Story = {
+export const ComfyWithInvalidCredetial: Story = {
   render: () => (
     <KcPageStory
       kcContext={{
@@ -419,7 +419,7 @@ export const TestWithInvalidCredetial: Story = {
   )
 };
 
-export const TestWithErrorMessage: Story = {
+export const ComfyWithErrorMessage: Story = {
   render: () => (
     <KcPageStory
       kcContext={{
