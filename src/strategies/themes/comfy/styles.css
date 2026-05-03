@@ -72,7 +72,7 @@
   }
 
   .kcInputWrapperClass {
-    @apply flex;
+    @apply flex flex-col;
   }
 
   .kcFormOptionsWrapperClass {
