@@ -7,7 +7,7 @@ interface Quote {
 }
 
 export function useGetQuote(): Quote {
-  const [quote, _setQuote] = useState<Quote>(quoteList[Math.floor(Math.random() * quoteList.length)]);
+  const [quote] = useState<Quote>(quoteList[Math.floor(Math.random() * quoteList.length)]);
 
   return quote;
 }
