@@ -1,4 +1,4 @@
-import { useGetQuote } from "../hooks/useGetQuotes";
+import { useGetQuote } from "../../hooks/useGetQuotes";
 
 export function RenderQuote() {
   const quote = useGetQuote();

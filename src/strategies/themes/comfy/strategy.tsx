@@ -2,8 +2,8 @@ import { ThemeStrategy, TemplateRenderContext } from "../../types";
 import ComfyuiLogo from "../../../assets/images/comfyui-text.svg?react";
 import "./styles.css";
 import "@fontsource/arimo/400.css";
-import { RenderQuote } from "../../components/RenderQuote";
-import { RenderMessage } from "../../components/RenderMessage";
+import { RenderQuote } from "../../components/comfy/RenderQuote";
+import { RenderMessage } from "../../components/comfy/RenderMessage";
 
 export const comfyStrategy: ThemeStrategy = {
   render: (ctx: TemplateRenderContext) => {
