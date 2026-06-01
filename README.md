@@ -100,6 +100,8 @@ export const strategyMap: Record<string, ThemeStrategy> = {
 
 ## Building the theme
 
+### Bare Metal
+
 Requires [Maven](https://maven.apache.org/) (>= 3.1.1) and Java (>= 7). The `mvn` command must be in your `$PATH`.
 
 - macOS: `brew install maven`
@@ -136,3 +138,7 @@ To release a new version, simply **update the `version` field in `package.json` 
 
 To enable the workflow, go to your repository on GitHub and navigate to:
 `Settings` > `Actions` > `Workflow permissions`, then select `Read and write permissions`.
+
+### Docker
+
+Run `docker compose up`.
