@@ -22,6 +22,7 @@ logs
 # OS / editor
 .DS_Store
 .vscode
+.zed
 
 # Coverage / test
 coverage
