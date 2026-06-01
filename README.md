@@ -114,6 +114,10 @@ npm run build-keycloak-theme
 
 By default Keycloakify generates multiple `.jar` files targeting different Keycloak versions. See the [documentation](https://docs.keycloakify.dev/features/compiler-options/keycloakversiontargets) to customize this behavior.
 
+### Docker
+
+Run `docker compose up`.
+
 ---
 
 ## Initializing the account theme
@@ -138,7 +142,3 @@ To release a new version, simply **update the `version` field in `package.json` 
 
 To enable the workflow, go to your repository on GitHub and navigate to:
 `Settings` > `Actions` > `Workflow permissions`, then select `Read and write permissions`.
-
-### Docker
-
-Run `docker compose up`.
