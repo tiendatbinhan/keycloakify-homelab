@@ -15,7 +15,7 @@ The main addition over the upstream starter is a **Strategy Pattern** that contr
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/keycloakify-homelab
+git clone https://github.com/tiendatbinhan/keycloakify-homelab
 cd keycloakify-homelab
 yarn install
 ```
@@ -65,7 +65,7 @@ import type { ThemeStrategy } from "../../types";
 import "./styles.css";
 
 const myThemeStrategy: ThemeStrategy = {
-  render: props => {
+  render: ctx => {
     // Implement your theme render logic here
   }
 };
