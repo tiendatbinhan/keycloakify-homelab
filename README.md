@@ -1,58 +1,138 @@
 <p align="center">
-    <i>🚀 <a href="https://keycloakify.dev">Keycloakify</a> v11 starter 🚀</i>
+    <i>🏠 <a href="https://keycloakify.dev">Keycloakify</a> v11 — Homelab Theme 🏠</i>
     <br/>
     <br/>
 </p>
 
-# Quick start
+# keycloakify-homelab
+
+Personal homelab Keycloak theme, forked from [`keycloakify-starter`](https://github.com/keycloakify/keycloakify-starter).
+
+The main addition over the upstream starter is a **Strategy Pattern** that controls theme rendering based on `client_id` — each Keycloak client can have its own distinct UI.
+
+---
+
+## Quick start
 
 ```bash
-git clone https://github.com/keycloakify/keycloakify-starter
-cd keycloakify-starter
-yarn install # Or use an other package manager, just be sure to delete the yarn.lock if you use another package manager.
+git clone https://github.com/<your-username>/keycloakify-homelab
+cd keycloakify-homelab
+yarn install
 ```
 
-# Testing the theme locally
+---
+
+## Strategy Pattern
+
+Instead of a single theme for all clients, this repo maps each `client_id` to a dedicated theme strategy.
+
+When a login page is rendered, the system reads the `client_id` from the Keycloak context and looks it up in `strategyMap`. If a match is found, the corresponding strategy is used; otherwise it falls back to the default theme.
+
+### Directory structure
+
+```text
+src/
+└── strategies/
+    ├── index.ts              # strategyMap: maps client_id → strategy
+    └── themes/
+        ├── default/          # Default strategy (fallback)
+        │   ├── index.ts
+        │   └── strategy.tsx
+        ├── comfy/            # Strategy for the "comfy" client
+        │   ├── index.ts
+        │   ├── strategy.tsx
+        │   └── styles.css
+        └── ...
+```
+
+---
+
+## Adding a new strategy
+
+### Step 1 — Create the theme directory
+
+```bash
+mkdir ./src/strategies/themes/{theme-name}
+```
+
+### Step 2 — Create `index.ts` and export the strategy
+
+In `./src/strategies/themes/{theme-name}/index.ts`, export a default constant of type `ThemeStrategy`. This is where you implement the render function for that theme.
+
+```typescript
+// src/strategies/themes/{theme-name}/index.ts
+import type { ThemeStrategy } from "../../types";
+import "./styles.css";
+
+const myThemeStrategy: ThemeStrategy = {
+  render: props => {
+    // Implement your theme render logic here
+  }
+};
+
+export default myThemeStrategy;
+```
+
+> It is recommended to create a `styles.css` in the same directory to manage styles specific to that strategy.
+
+### Step 3 — Register the strategy in `strategyMap`
+
+In `./src/strategies/index.ts`, add a key-value pair to `strategyMap` where the key is the `client_id` of the corresponding Keycloak client:
+
+```typescript
+// src/strategies/index.ts
+import comfyStrategy from "./themes/comfy";
+import myNewTheme from "./themes/{theme-name}";
+
+export const strategyMap: Record<string, ThemeStrategy> = {
+  comfyui: comfyStrategy,
+  "{client-id}": myNewTheme // 👈 add your entry here
+};
+```
+
+---
+
+## Testing the theme locally
 
 [Documentation](https://docs.keycloakify.dev/testing-your-theme)
 
-# How to customize the theme
+---
 
-[Documentation](https://docs.keycloakify.dev/css-customization)
+## Building the theme
 
-# Building the theme
+Requires [Maven](https://maven.apache.org/) (>= 3.1.1) and Java (>= 7). The `mvn` command must be in your `$PATH`.
 
-You need to have [Maven](https://maven.apache.org/) installed to build the theme (Maven >= 3.1.1, Java >= 7).  
-The `mvn` command must be in the $PATH.
-
-- On macOS: `brew install maven`
-- On Debian/Ubuntu: `sudo apt-get install maven`
-- On Windows: `choco install openjdk` and `choco install maven` (Or download from [here](https://maven.apache.org/download.cgi))
+- macOS: `brew install maven`
+- Debian/Ubuntu: `sudo apt-get install maven`
+- Windows: `choco install openjdk` and `choco install maven` (or download from [here](https://maven.apache.org/download.cgi))
 
 ```bash
 npm run build-keycloak-theme
 ```
 
-Note that by default Keycloakify generates multiple .jar files for different versions of Keycloak.  
-You can customize this behavior, see documentation [here](https://docs.keycloakify.dev/features/compiler-options/keycloakversiontargets).
+By default Keycloakify generates multiple `.jar` files targeting different Keycloak versions. See the [documentation](https://docs.keycloakify.dev/features/compiler-options/keycloakversiontargets) to customize this behavior.
 
-# Initializing the account theme
+---
+
+## Initializing the account theme
 
 ```bash
 npx keycloakify initialize-account-theme
 ```
 
-# Initializing the email theme
+## Initializing the email theme
 
 ```bash
 npx keycloakify initialize-email-theme
 ```
 
-# GitHub Actions
+---
 
-The starter comes with a generic GitHub Actions workflow that builds the theme and publishes
-the jars [as GitHub releases artifacts](https://github.com/keycloakify/keycloakify-starter/releases/tag/v10.0.0).  
-To release a new version **just update the `package.json` version and push**.
+## GitHub Actions
 
-To enable the workflow go to your fork of this repository on GitHub then navigate to:
-`Settings` > `Actions` > `Workflow permissions`, select `Read and write permissions`.
+The repo includes a GitHub Actions workflow that builds the theme and publishes the `.jar` files as [GitHub release artifacts](https://github.com/keycloakify/keycloakify-starter/releases/tag/v10.0.0).
+
+To release a new version, simply **update the `version` field in `package.json` and push**.
+
+To enable the workflow, go to your repository on GitHub and navigate to:
+`Settings` > `Actions` > `Workflow permissions`, then select `Read and write permissions`.
