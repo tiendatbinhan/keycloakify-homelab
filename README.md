@@ -141,4 +141,4 @@ The repo includes a GitHub Actions workflow that builds the theme and publishes 
 To release a new version, simply **update the `version` field in `package.json` and push**.
 
 To enable the workflow, go to your repository on GitHub and navigate to:
-`Settings` > `Actions` > `Workflow permissions`, then select `Read and write permissions`.
+`Settings` > `Actions` > `General` > `Workflow permissions`, then select `Read and write permissions`.
